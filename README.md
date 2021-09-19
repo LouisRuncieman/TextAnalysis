@@ -66,4 +66,16 @@ Word, Total occurrences, Occurrences in <filename>, Extracts in <filename>.
 This dataframe can be visualised using `show` from the `pandasgui` package.
 
 ## Example
+
+By running `main.py` display a summary dataframe from the plain text files in `test_docs/`, generated using `SummaryOfTextAnalysers`. Note that occurrences count the number of unique sentences the wor was used in, not the total number of occurrences across the entire text.
+Token manipulation done:
+* word tokens have had contractions expanded,
+* word tokens are normalised,
+* stopwords and words in `uninteresting_words.csv` removed.
+
+Finally, results are filtered to only those with Total Occurrences >= 20.
+
+![image](https://user-images.githubusercontent.com/44169061/133929024-f58eb50c-65fb-4f2c-bc3f-2ca4ecbd7f05.png)
+
+
   
