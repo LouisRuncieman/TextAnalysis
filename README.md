@@ -42,8 +42,8 @@ Given a word to search for, return a list of sentence tokens in which it was use
 
 ## `SummaryOfTextAnalysers`
 
-Given a dictionary with `filename` keys and `TextAnalyser` values, create a condensed text analysis summary upon initialisation. 
-The summary is indexed by interesting word and provides all sentence tokens in which the interesting word is used for each `filename`. E.g.:
+Given a dictionary with \<filename\> keys and `TextAnalyser` values, create a condensed text analysis summary upon initialisation. 
+The summary is indexed by interesting word and provides all sentence tokens in which the interesting word is used for each \<filename\>. E.g.:
 
 ```
 {
@@ -66,13 +66,15 @@ This dataframe can be visualised using `show` from the `pandasgui` package.
 
 ## Example
 
-By running `main.py` display a summary dataframe from the plain text files in `test_docs/`, generated using `SummaryOfTextAnalysers`. Note that occurrences count the number of unique sentences the wor was used in, not the total number of occurrences across the entire text.
-Token manipulation done:
-* word tokens have had contractions expanded,
-* word tokens are normalised,
+By running `main.py`, display a summary dataframe from the plain text files found in `test_docs/`, generated using `SummaryOfTextAnalysers`. Note that occurrences count the number of unique sentences the word was used in, not the occurrences across the entire text.
+Token manipulation:
+* word tokens have had contractions expanded;
+* word tokens are normalised;
 * stopwords and words in `uninteresting_words.csv` removed.
 
 Finally, results are filtered to only those with Total Occurrences >= 20.
+
+#### Result
 
 ![image](https://user-images.githubusercontent.com/44169061/133929024-f58eb50c-65fb-4f2c-bc3f-2ca4ecbd7f05.png)
 
