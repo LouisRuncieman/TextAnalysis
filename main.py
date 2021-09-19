@@ -6,19 +6,30 @@ from text_analysis.summarise_text_analysers import SummaryOfTextAnalysers
 from text_analysis.text_analyser import TextAnalyser
 
 
+def get_tokens_to_remove():
+    stopwords = nltk.corpus.stopwords.words("english")
+    tokens_to_remove = stopwords + get_uninteresting_words("uninteresting_words.csv")
+    return tokens_to_remove
+
+
+def get_uninteresting_words(filename):
+    raw = file_import(filename)
+    temp = raw.split(",")
+    return temp
+
+
 def create_text_analysers_from_directory(directory):
     valid_file_formats = ('.txt')
+    tokens_to_remmove = get_tokens_to_remove()
 
     text_analysers = {}
     for filename in os.listdir(directory):
         if filename.endswith(valid_file_formats):
-            text_analysers[filename] = create_text_analyser_from_file(directory + filename)
+            text_analysers[filename] = create_text_analyser_from_file(directory + filename, tokens_to_remmove)
     return text_analysers
 
 
-def create_text_analyser_from_file(filename):
-    stopwords = nltk.corpus.stopwords.words("english")
-    tokens_to_remove = stopwords + ["let", "us", "one", "also", "need", "must", "many", "enough"]
+def create_text_analyser_from_file(filename, tokens_to_remove):
 
     text_body = file_import(filename)
     text_analyser = TextAnalyser(text_body)
@@ -34,6 +45,7 @@ def create_text_analyser_from_file(filename):
 def file_import(filename):
     f = open(filename, 'r')
     raw = f.read()
+    raw = raw.rstrip('\n')
     return raw
 
 
