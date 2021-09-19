@@ -74,7 +74,7 @@ Token manipulation:
 
 Finally, results are filtered to only those with Total Occurrences >= 20.
 
-#### Result
+#### Result displayed in `pandasgui`
 
 ![image](https://user-images.githubusercontent.com/44169061/133929406-8be4ec3d-86ac-49fd-b3d4-90c101d02418.png)
 
