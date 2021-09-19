@@ -2,7 +2,7 @@ import nltk
 import os
 from pandasgui import show
 
-from text_analysis.summarise_text_analysers import SummaryOfTextAnalysers
+from text_analysis.summary_of_text_analysers import SummaryOfTextAnalysers
 from text_analysis.text_analyser import TextAnalyser
 
 
