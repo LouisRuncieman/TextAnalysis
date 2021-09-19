@@ -23,7 +23,7 @@ Remove non-alphabetic characters from word tokens, such as punctuation. Make all
 #### `porter_stem_tokens`
 
 Convert word tokens into their stem (root). This is done by removing affixes from the word token (such as de-, bi-, ,-es, -ing, -s). Done via the Porter Algorithm. 
-Note that stemming a word or sentence may result in words that are not actual words (for example universe is stemmed to univers).
+Note that stemming a word or sentence may result in words that are not actual words (for example 'universe' is stemmed to 'univers').
 
 #### `lemmatize_tokens`
 
@@ -79,5 +79,11 @@ Finally, results are filtered to only those with Total Occurrences >= 20.
 
 ![image](https://user-images.githubusercontent.com/44169061/133929406-8be4ec3d-86ac-49fd-b3d4-90c101d02418.png)
 
+## Future Work
+
+* Unit tests. 
+* Error handling.
+* Spelling mistake handling.
+* Implement and compare other stemming and lemmatization algorithms.
 
   
