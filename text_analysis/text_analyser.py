@@ -6,17 +6,17 @@ import re
 class TextAnalyser:
 
     def __init__(self, text_body):
-        self.text_body = text_body
+        self._text_body = text_body
         self.word_tokens = []
         self.sentence_tokens = []
         self._text_body_to_tokens()
         self._text_body_to_sentence_tokens()
 
     def _text_body_to_tokens(self):
-        self.word_tokens = nltk.word_tokenize(self.text_body)
+        self.word_tokens = nltk.word_tokenize(self._text_body)
 
     def _text_body_to_sentence_tokens(self):
-        self.sentence_tokens = nltk.sent_tokenize(self.text_body)
+        self.sentence_tokens = nltk.sent_tokenize(self._text_body)
 
     def expand_contractions_in_tokens(self):
         self.word_tokens = [contractions.fix(word) for word in self.word_tokens]

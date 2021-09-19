@@ -35,8 +35,8 @@ def create_text_analyser_from_file(filename, tokens_to_remove):
     text_analyser = TextAnalyser(text_body)
     text_analyser.expand_contractions_in_tokens()
     text_analyser.normalise_tokens()
-    # interesting_word_analyser.porter_stem_tokens()
-    # interesting_word_analyser.lemmatize_tokens()
+    # text_analyser.porter_stem_tokens()
+    # text_analyser.lemmatize_tokens()
     text_analyser.remove_tokens(tokens_to_remove)
 
     return text_analyser
@@ -55,4 +55,5 @@ if __name__ == '__main__':
     text_analysers = create_text_analysers_from_directory(relative_directory_path)
     summary_of_text_analysers = SummaryOfTextAnalysers(text_analysers)
     df = summary_of_text_analysers.create_dataframe()
-    show(df[df["Total occurrences"] > 20])
+    show(df[df["Total occurrences"] >= 20])
+    # show(df)
