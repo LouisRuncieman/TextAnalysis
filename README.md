@@ -83,7 +83,7 @@ Finally, results are filtered to only those with Total Occurrences >= 20.
 
 * Unit tests. 
 * Error handling.
-* Spelling mistake handling.
+* Spelling mistake handling in the raw text.
 * Implement and compare other stemming and lemmatization algorithms.
 
   
