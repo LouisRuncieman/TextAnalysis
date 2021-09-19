@@ -1,15 +1,15 @@
 # Text Analysis
 
 Given a plain text file (or a directory of files), produce the following summary: 
-* _Interesting_ words used (and occurrences);
+* _Interesting_\* words used (and occurrences);
 * the files in which they appear (and occurrences);
 * The sentences in which they are used.
 
-Interesting words are defined as any word other than stopwords (defined by the NLTK Corpora Stopwords list) or any words appearing in uninteresting_words.csv which can be manually added to over time.
+\*Interesting words are defined as any word other than stopwords (defined by the NLTK Corpora Stopwords list) or any words appearing in uninteresting_words.csv which can be manually added to over time.
 
 ## `TextAnalyser`
 
-This class takes a raw text body (as a string) and generates word tokens and sentence tokens upon initilisation. Once created, sentence tokens remain unchanged. Word tokens, however, have a number of methods to manipulate their content. 
+This class takes a raw text body (as a string) and generates word tokens and sentence tokens upon initilisation. Once created, sentence tokens remain unchanged. Word tokens, however, have a number of methods to manipulate their content inplace. 
 
 ### `expand_contractions_in_tokens`
 
