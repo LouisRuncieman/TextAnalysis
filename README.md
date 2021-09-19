@@ -1,15 +1,16 @@
 # Text Analysis
 
 Given a plain text file (or a directory of files), produce the following summary: 
-* Interesting\* words used (and occurrences);
+* Interesting words used (and occurrences);
 * the files in which they appear (and occurrences);
 * The sentences in which they are used.
 
-\*Interesting words are defined as any word other than stopwords (defined by the NLTK Corpora Stopwords list) or any words appearing in `uninteresting_words.csv` which can updated over time.
+Interesting words are defined as any word other than stopwords or words appearing in `uninteresting_words.csv`. 
+Stopwords are defined by the NLTK Corpora Stopwords list and `uninteresting_words.csv` is a manually curated list of 'uninteresting' words which can be updated over time by a subject-matter expert. 
 
 ## `TextAnalyser`
 
-This class takes a raw text body (as a string) and generates word tokens and sentence tokens upon initilisation. Once created, sentence tokens remain unchanged. Word tokens, however, have a number of methods to manipulate their content inplace. 
+This class takes a raw text body (as a string) and generates word tokens and sentence tokens upon initialisation. Once created, sentence tokens remain unchanged. Word tokens, however, have a number of methods to manipulate their content inplace. 
 
 #### `expand_contractions_in_tokens`
 
@@ -17,16 +18,16 @@ Using the `contractions` package, expand contractions in every word token. For e
 
 #### `normalise_tokens`
 
-Remove non-alphabetic characters from word tokens, such as punctionation. Make all word tokens lower case.
+Remove non-alphabetic characters from word tokens, such as punctuation. Make all word tokens lower case.
 
 #### `porter_stem_tokens`
 
-Convert word tokens into their stem (root). This is done by removing affixes from the word token (such as de-, bi-, ,-es, -ing, -s). Done via the Porter Algorithm (other algorithms avaiable). 
+Convert word tokens into their stem (root). This is done by removing affixes from the word token (such as de-, bi-, ,-es, -ing, -s). Done via the Porter Algorithm. 
 Note that stemming a word or sentence may result in words that are not actual words (for example universe is stemmed to univers).
 
 #### `lemmatize_tokens`
 
-Cnvert word tokens into their lemma (base). Lemmatization considers the context and converts the word to its meaningful base form, avoiding spelling mistakens seen in stemming. For example, "run", "ran", "running" all have lemma "run". "Better", "great" and "good" have lemma "good".
+Convert word tokens into their lemma (base). Lemmatization considers the context and converts the word to its meaningful base form, avoiding spelling mistakes seen in stemming. For example, "run", "ran", "running" all have lemma "run". "Better", "great" and "good" have lemma "good".
 
 #### `remove_tokens`
 
@@ -43,7 +44,7 @@ Given a word to search for, return a list of sentence tokens in which it was use
 ## `SummaryOfTextAnalysers`
 
 Given a dictionary with \<filename\> keys and `TextAnalyser` values, create a condensed text analysis summary upon initialisation. 
-The summary is indexed by interesting word and provides all sentence tokens in which the interesting word is used for each \<filename\>. E.g.:
+The summary is indexed by interesting words and provides all sentence tokens in which the interesting word is used for each \<filename\>. E.g.:
 
 ```
 {
