@@ -76,7 +76,7 @@ Finally, results are filtered to only those with Total Occurrences >= 20.
 
 #### Result
 
-![image](https://user-images.githubusercontent.com/44169061/133929024-f58eb50c-65fb-4f2c-bc3f-2ca4ecbd7f05.png)
+![image](https://user-images.githubusercontent.com/44169061/133929406-8be4ec3d-86ac-49fd-b3d4-90c101d02418.png)
 
 
   
