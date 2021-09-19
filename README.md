@@ -1,7 +1,7 @@
 # Text Analysis
 
 Given a plain text file (or a directory of files), produce the following summary: 
-* _Interesting_\* words used (and occurrences);
+* Interesting\* words used (and occurrences);
 * the files in which they appear (and occurrences);
 * The sentences in which they are used.
 
