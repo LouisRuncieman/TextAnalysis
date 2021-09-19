@@ -42,8 +42,8 @@ Given a word to search for, return a list of sentence tokens in which it was use
 
 ## `SummaryOfTextAnalysers`
 
-Given a dictionary with filename keys and `TextAnalyser` values, create a condensed text analysis summary upon initialisation. 
-The summary is indexed by interesting word provides all sentence tokens in which the interesting word is used, for each filename:
+Given a dictionary with `filename` keys and `TextAnalyser` values, create a condensed text analysis summary upon initialisation. 
+The summary is indexed by interesting word and provides all sentence tokens in which the interesting word is used for each `filename`. E.g.:
 
 ```
 {
@@ -59,10 +59,9 @@ The summary is indexed by interesting word provides all sentence tokens in which
 ```
 This summary contains sufficient information to determine occurrences of word tokens across all documents in unique sentences.
 
-### `create_dataframe`
+#### `create_dataframe`
 
-Generate a pandas dataframe from the `summary`. Essentially a non-condensed form of `summary`, with headers:
-Word, Total occurrences, Occurrences in <filename>, Extracts in <filename>.
+Generate a pandas dataframe from the `summary`. Essentially a non-condensed form of `summary`, with headers: Word, Total occurrences, Occurrences in \<filename\>, Extracts in \<filename\>.
 This dataframe can be visualised using `show` from the `pandasgui` package.
 
 ## Example
